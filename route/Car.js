@@ -5,7 +5,7 @@ const route = express.Router();
 route.get('/get_all', async (req, res) => {
   try {
     const cars = await Cars.find();
-    res.send(cars);
+    res.json(cars);
   } catch (err) {
     res.status(400).send('error happened');
   }
