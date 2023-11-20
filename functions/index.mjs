@@ -1,6 +1,7 @@
 import express from 'express';
 import serverless from 'serverless-http';
 import Cars from '../route/Car';
+import Login from '../route/User';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -19,6 +20,7 @@ mongoose
     console.log(err);
   });
 app.use('/cars', Cars);
+app.use('/admin', Login);
 
 const handler2 = serverless(app);
 
