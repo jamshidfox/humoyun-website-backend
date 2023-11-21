@@ -5,11 +5,14 @@ import Login from '../route/User';
 import Employees from '../route/Employes';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const configURL =
   'mongodb+srv://admin:Admin12345@cluster0.af3utjh.mongodb.net/Cars?retryWrites=true&w=majority';
 
 const app = express();
+
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
